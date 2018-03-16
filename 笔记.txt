@@ -1,0 +1,38 @@
+virtualenv -p python3 .env
+
+source .env/bin/activate
+jupyter notebook
+http://localhost:8888
+deactivate
+
+安装依赖包遇到的问题：
+1.原来的42行：site==0.0.1 找不到这个包
+ Could not find a version that satisfies the requirement site==0.0.1 (from -r requirements.txt (line 42)) (from versions: )
+No matching distribution found for site==0.0.1 (from -r requirements.txt (line 42))
+
+[site==0.0.1的问题](https://www.reddit.com/r/cs231n/comments/7r40dt/sp17_assignment1_requirementstxt_line_42_site001/)
+
+2.Failed building wheel for gnureadline
+
+sudo apt-get install libncurses5-dev
+[Failed building wheel for gnureadline](https://stackoverflow.com/questions/22892482/error-installing-gnureadline-via-pip)
+
+3.knn第一个cell报错"No module named _tkinter"
+
+[Python下"No module named _tkinter"问题解决过程总结](http://blog.csdn.net/blueheart20/article/details/78763208)
+
+=======================================================================
+一些python知识
+list->array    np.array(a)
+array->list    a.tolist()
+np.argsort(x)   //返回从最小到最大的索引序列,如果x是多维矩阵，每一行为列序号
+x[([],[])]  //行序号，列序号分别用列表或是数组表示，组成元组，指定多维数组多个特定位置
+pp,qq=np.where(cc.T==np.amax(cc,axis=0))//每一行最大值的行号，列号
+
+
+
+
+
+
+
+
